@@ -1,0 +1,17 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+using namespace std;
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    float f,s,p;
+
+    cin >> f >> s >> p ;
+    cout << "Введите кол-во фунтов :" << f << endl
+    << "Введите кол-во шиллингов :" << s << endl
+    << "Введите кол-во пенни :" << p << endl;
+    f=f+((s*5) + (p/2.4))/100;
+    cout << "Кол-во фунтов в новой системе :" << 'j' << f <<  endl;
+    return 0;
+}
