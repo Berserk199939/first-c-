@@ -1,0 +1,38 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+using namespace std;
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    float f,s,p,om, ost;
+
+    cin >> f  ;
+    cout << "Введите кол-во фунтов :" << f << endl;
+    //<< "Введите кол-во шиллингов :" << s << endl
+    //<< "Введите кол-во пенни :" << p << endl;
+    /*om = (p % 10);
+    om = (om *2.4)/10 ;
+    p=static_cast<int>(p);
+    p/=10;
+    f= f+(om+(p*10));*/
+    om=static_cast<int>(f); // om=3
+    s=(f-om);//s=0.51
+    p=s*10;// p=5.1
+    ost=p;//ost=5.1
+    ost/=10;//ost=0.51
+    p=static_cast<int>(p);// p=5
+    p/=10;//p=0.5
+    p=ost-p;// p=0.51-0.5=0.01
+    p*=2.4;//p=0.01*2.4=0.02
+    s*=10;//s=5.1
+    s=static_cast<int>(s);//s=5
+    s/=5;//s=1
+    s/=10;
+    f=om+p+s;//3+0.02+0.1
+
+
+
+    cout << "Кол-во фунтов в новой системе :" << 'j' << f <<  endl;
+    return 0;
+}
