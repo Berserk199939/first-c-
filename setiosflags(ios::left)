@@ -1,0 +1,14 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+using namespace std;
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    cout << setiosflags(ios::left) << setw(8) << "Фамилия" << setw(8) << "Имя" << setw(12) << "Адрес" << setw(15) << "Город" << endl
+    <<"------------------------------------------------"<<endl
+    << setw(8) << "Петров" << setw(8) << "Василий" << setw(12) << "Кленовая 16" << setw(15) << "Санкт-Петербург" <<endl
+    << setw(8) << "Иванов" << setw(8) << "Сергей" << setw(12) << "Осиновая 3" << setw(15) << "Находка" <<endl
+    << setw(8) << "Сидоров" << setw(8) << "Иван" << setw(12) << "Березовая" << setw(15) << "Калининград" <<endl;
+    return 0;
+}
