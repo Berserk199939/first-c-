@@ -1,0 +1,57 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    char ch;
+    float ct=0,cy=0,sum, pc,pt,sumd,j=0,sumdd;
+    cin >> ch;
+    do
+    {
+
+        {
+            switch (ch)
+                {
+                case '1':
+                    {
+                        cout << "Введите первую сумма: " << endl;
+                        cin >>ct ;
+                        cout << "Введите вторую сумму: " << endl;
+                        cin >> cy;
+                        break;
+                    }
+                case 'f':
+                    {
+                        cout << "Вы отправлены в начало цикла. Для выхода нажмите n. " << endl;
+                        continue;
+                    }
+                        default : cout << "Вы ввели неккоректные значения. Попробуйте заново, нажав n или f для выхода из программы." << endl;
+                        break;
+                }
+                pt =ct;
+                ct= static_cast<int>(ct);
+                pt= pt - ct;
+                pc = cy;
+                cy = static_cast<int>(cy);
+                pc = pc - cy;
+                sumd = pc+pt;
+                sumd*=100;
+                if (sumd > 20)
+                {
+                    sumd = sumd/20;
+                    j++;
+                    j=j*sumd;
+                    sumd/=100;
+
+                }
+                cout << "Сложение двух сумм :" << ct+cy +j+sumd << endl;
+
+        }
+        }while((ch=getch())!='n');
+    return 0;
+}
