@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+const int clubs =0; //
+const int diamonds =1; //
+int main ()
+{
+    int i,j,p=20,l=20;
+    for (i=0; i <=20; i++)
+    {
+        for (j=0; j <=p; j++)
+        {
+                if (j>=l && j <=20)
+
+                cout << 'x';
+                else
+                    {
+                        cout << ' ';
+                    }
+        }
+        cout << endl;
+        l--;
+    }
+    return 0;
+}
