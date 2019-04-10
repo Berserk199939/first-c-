@@ -1,0 +1,34 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+struct Distance
+{
+    int feet; // футы
+    float inches; // Дюймы
+};
+struct volume
+{
+    Distance dlina;
+    Distance shirote;
+    Distance visota;
+};
+int main ()
+{
+    setlocale (LC_ALL, "russian");
+    volume dining;
+    cout << "Введите длину, ширину и высоту в футах :" << endl;
+    cin >> dining.dlina.feet >> dining.shirote.feet>> dining.visota.feet;
+    cout << "Введите длину, ширину и высоту в дюймах :" << endl;
+    cin >> dining.dlina.inches >> dining.shirote.inches >> dining.visota.inches;
+    float dl= dining.dlina.feet + dining.dlina.inches/12 ; // ДЛИНА С ФУТАМИ И ДЮЙМАМИ (УЖЕ ПЕРЕВЕДЁННЫМИ
+    float sh = dining.shirote.feet + dining.shirote.inches/12;
+    float vs = dining.visota.feet+dining.visota.inches/12;
+    cout << setw(8) << "ДЛИНА" << setw(8) << "ШИРИНА" << setw(8) << "ВЫСОТА" << endl;
+    cout << setw(8) << dl << setw(8) << sh << setw(8) << vs << endl;
+    cout << "Объём гостинной равен :" << dl*sh*vs << endl;
+    return 0;
+}
