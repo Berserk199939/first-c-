@@ -1,0 +1,29 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+struct point
+{
+    float abcess;
+    float ordinate;
+};
+int main ()
+{
+    setlocale (LC_ALL, "russian");
+    point x1,x2;
+    point y1,y2;
+    point sumx, sumy;
+    cin >> x1.abcess >>y1.ordinate;
+    cout << "Введённые значения х1 и у1 равны :";
+    cout << x1.abcess << y1.ordinate << endl;
+    cin >> x2.abcess >>y2.ordinate;
+    cout << "Введённые значения х2 и у2 равны :";
+    cout << x2.abcess << y2.ordinate <<endl;
+    sumx.abcess = x1.abcess + x2.abcess;
+    sumy.ordinate = y1.ordinate + y2.ordinate;
+    cout << "Сумма двух координат равна = (" << sumx.abcess << " " << sumy.ordinate << " )" <<endl;
+    return 0;
+}
