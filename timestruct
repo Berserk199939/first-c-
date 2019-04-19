@@ -1,0 +1,35 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+struct time
+{
+    int hours;
+    int minutes;
+    int seconds;
+};
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    int hr, ms, sec;
+    time t1;
+    cout << "Часы Минуты Секунды" << endl;
+    cin >> hr >> ms >> sec;
+    t1.hours=hr; t1.minutes = ms; t1.seconds = sec;
+    long totalsecs=t1.hours*3600 + t1.minutes*60+t1.seconds;
+    cin >> hr >> ms >> sec;
+    t1.hours=hr; t1.minutes = ms; t1.seconds = sec;
+    long totalsecs2=t1.hours*3600 + t1.minutes*60+t1.seconds;
+    totalsecs+=totalsecs2;
+    cout << totalsecs<< endl;
+    t1.hours=totalsecs/3600;
+    totalsecs=totalsecs-t1.hours*3600;
+    t1.minutes=totalsecs/60;
+    totalsecs=totalsecs-t1.minutes*60;
+    t1.seconds=totalsecs;
+    cout << t1.hours << ":" << t1.minutes << ":" << t1.seconds << endl;
+    return 0;
+}
