@@ -1,0 +1,45 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+long hms_to_secs(long,long,long);
+struct time
+{
+    int hours;
+    int minutes;
+    int seconds;
+};
+long time_to_secs(time);
+time secs_to_time(long);
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    time t1,hms;
+    long t2;
+    cout << "Часы " << "Минуты " << "Секунды " << endl;
+    cin >> t1.hours >> t1.minutes >> t1.seconds;
+    cout << time_to_secs(t1) << endl;
+    cout <<"/////////////////////////////////" << endl;
+    cout << "Секунды" << endl;
+    cin >> t2;
+    hms = secs_to_time(t2);
+    cout << hms.hours << " " << hms.minutes << " " << hms.seconds << endl;
+    return 0;
+}
+long time_to_secs(time tt1)
+{
+    long totalseconds;
+    return totalseconds = tt1.hours*3600+tt1.minutes*60+tt1.seconds;
+}
+time secs_to_time(long tt2)
+{
+    time hms;
+    long hours=tt2/ 3600;
+    long minuts = (tt2 - hours*3600) / 60;
+    long seconds = tt2 - hours*3600 - minuts*60;
+    hms.hours=hours;    hms.minutes = minuts;   hms.seconds = seconds;
+    return hms;
+}
