@@ -1,0 +1,78 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+double power (double, int);
+double power (int, int);
+double power (char, int);
+double power (float, int);
+double power (long, int);
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    int q,w,e,r,t,y;
+    double a;
+    char s;
+    long d;
+    float f;
+    char ch;
+    cin >> ch;
+    switch (ch)
+    {
+        case '0' : cout << "double = "; cin >> a; cout << "int = "; cin >> q; cout << endl << power(a,q); break;
+        case '1' : cout << "char = "; cin >> s; cout << "int = "; cin >> w; cout << endl << power(s,w); break;
+        case '2' : cout << "long = "; cin >> d; cout << "int = "; cin >> e; cout << endl << power(s,w); break;
+        case '3' : cout << "float = "; cin >> f; cout << "int = "; cin >> r; cout << endl << power(s,w); break;
+        case '4' : cout << "int = "; cin >> y; cout << "int = "; cin >> t; cout << endl << power(s,w); break;
+    }
+
+    return 0;
+}
+double power (double n, int p)
+{
+    double x=n;
+    {
+        for (int i = 1; i<p; i++)
+        n=x*n;
+    }
+    return n;
+}
+double power (int n, int p)
+{
+    int x=n;
+    {
+        for (int i = 1; i<p; i++)
+        n=x*n;
+    }
+    return n;
+}
+double power (float n,int p)
+{
+    float x=n;
+    {
+        for (int i = 1; i<p; i++)
+        n=x*n;
+    }
+    return n;
+}
+double power (long n, int p)
+{
+    long x=n;
+    {
+        for (int i = 1; i<p; i++)
+        n=x*n;
+    }
+    return n;
+}
+double power (char n,int p)
+{
+    char x=n;
+    {
+        for (int i = 1; i<p; i++)
+        n=x*n;
+    }
+    return n;
+}
