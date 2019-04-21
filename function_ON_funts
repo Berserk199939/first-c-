@@ -1,0 +1,52 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+struct sterling
+{
+    int pounds;
+    int shillings;
+    int pens;
+};
+sterling psp(int,int,int);
+sterling sumpsp(sterling,sterling);
+void display(sterling);
+
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    sterling one,two,sum;
+    int pounds,shilings,pens;
+    cout << "   pounds: " << "  shilings:  " << "   pens:    ";
+    cin  >> pounds  >> shilings  >> pens;
+    one = psp(pounds,shilings,pens);
+    cout << "   pounds: " << "  shilings:  " << "   pens:    ";
+    cin  >> pounds  >> shilings >> pens;
+    two = psp(pounds,shilings,pens);
+    sum = sumpsp(one,two);
+    display(sum);
+    return 0;
+}
+sterling psp (int p, int s, int pen)
+{
+    sterling money;
+    money.pounds = p;
+    money.shillings=s;
+    money.pens=pen;
+    return money;
+}
+sterling sumpsp(sterling one,sterling two)
+{
+    sterling sum;
+    sum.pounds = one.pounds+two.pounds;
+    sum.shillings = one.shillings+two.shillings;
+    sum.pens = one.pens+two.pens;
+    return sum;
+}
+void display(sterling sum)
+{
+    cout <<"sum pounds: " << sum.pounds << "sum shilings: " << sum.shillings << "sum pens: " << sum.pens;
+}
