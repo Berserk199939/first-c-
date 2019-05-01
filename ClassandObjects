@@ -1,0 +1,36 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+class Int
+{
+    int x;
+public:
+    Int():x(0)
+    {}
+    Int(int zn):x(zn)
+    {}
+    void display();
+    void sum(Int, Int);
+};
+
+void Int::display()
+{
+    cout << "Значение х = " << x << endl;
+}
+void Int::sum(Int x1, Int x2)
+{
+    x=x1.x+x2.x;
+
+}
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    Int Obj1(4),Obj2(7),Obj3(0);
+    Obj3.sum(Obj1,Obj2);
+    Obj3.display();
+    return 0;
+}
