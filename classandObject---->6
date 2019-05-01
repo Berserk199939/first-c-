@@ -1,0 +1,59 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+char ch;
+class employee
+{
+    int year;
+    int month;
+    int day;
+    int numberwo;
+    float getmoney;
+    enum etype {laborer, secretary, manager, accountant, executive, researcher};
+public:
+    employee():numberwo(0),getmoney(0)
+    {}
+    void getemploy();
+    void putemploy();
+};
+    void employee::getemploy()
+    {
+        cout << "Введите номер сотрудника : ";
+        cin >> numberwo;
+        cout << "Введите дату принятия на работу : ";
+        cin >> day; cin >> month; cin >> year;
+        cout << "Введите оклад сотрудника : ";
+        cin >> getmoney;
+    }
+    void employee:: putemploy()
+    {
+        cout << "Номер сотрудника : " << numberwo << endl;
+        cout << "Дата принятия на работу : " << day << "/" << month << "/" << year << endl;
+        cout << "Введите должность сотрудника 0-6 :" << endl;
+        ch=getch();
+                switch (ch)
+        {
+            case '0' : cout << "Должность сотрудника : Лаборатн" << endl; break;
+            case '1' : cout << "Должность сотрудника : Секретарь" << endl; break;
+            case '2' : cout << "Должность сотрудника : Менеджер" << endl; break;
+            case '3' : cout << "Должность сотрудника : Бухгалтер" << endl; break;
+            case '4' : cout << "Должность сотрудника : Должностное лицо" << endl; break;
+            case '5' : cout << "Должность сотрудника : Исследователь" << endl; break;
+        }
+        cout << "Оклад сотрудника : " << getmoney;
+
+
+    }
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    employee one;
+    one.getemploy();
+    cout << "--------------------------------------------------------------------------------"<< endl;
+    one.putemploy();
+    return 0;
+}
