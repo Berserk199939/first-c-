@@ -1,0 +1,81 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+class fraction
+{
+    static int i;
+    int under;
+    int sky;
+    int under1;
+    int sky1;
+public:
+    void love(fraction,fraction);
+    void dislove(fraction,fraction);
+    void biglove(fraction,fraction);
+    void disbiglove(fraction,fraction);
+    void Name();
+    void Display()
+    {
+        char ch=0;
+        cout << "Введите операцию, которая выполнялась от 0-3 : ";
+        ch=getche();
+        cout << endl;
+        switch (ch)
+        {
+        case '0' : cout << "Сложение = " << sky1 << " / " << under1 ; break;
+        case '1' : cout << "Вычитание = " << sky1 << " / " << under1; break;
+        case '2' : cout << "Умножение = " << sky1 << " / " << under1; break;
+        case '3' : cout << "Деление = " << sky1 << " / " << under1; break;
+        }
+    }
+};
+int fraction::i;
+void fraction::Name()
+{
+    if (i==0)
+    {
+        cout << "Введите первый член операции " << endl;
+        i++;
+    }
+    else
+    {
+        cout << "Введите второй член операции " << endl;
+    }
+        cout << "Введите числитель : "; cin >> sky;
+        cout << "Введите знаменатель : "; cin >> under; cout << endl;
+}
+void fraction::love(fraction Sasha,fraction Tanya)
+{
+    sky1=(Sasha.sky*Tanya.under+Sasha.under*Tanya.sky);
+    under1=(Sasha.under*Tanya.under);
+}
+void fraction::dislove(fraction Sasha,fraction Tanya)
+{
+    sky1=(Sasha.sky*Tanya.under-Sasha.under*Tanya.sky);
+    under1=(Sasha.under*Tanya.under);
+}
+void fraction::biglove(fraction Sasha,fraction Tanya)
+{
+    sky1=(Sasha.sky*Tanya.sky);
+    under1=(Sasha.under*Tanya.under);
+}
+void fraction::disbiglove(fraction Sasha,fraction Tanya)
+{
+    sky1=(Sasha.sky*Tanya.under);
+    under1=(Sasha.under*Tanya.sky);
+}
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    fraction Man,Woman,Sex;
+    Man.Name();
+    Woman.Name();
+    Sex.love(Man,Woman);
+    Sex.Display();
+    return 0;
+}
+
