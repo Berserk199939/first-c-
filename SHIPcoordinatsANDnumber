@@ -1,0 +1,51 @@
+#include <iostream>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+class ship
+{
+    int numberShip;
+    int gradus;
+    static int counternumber;
+    float minuts;
+    char hay;
+public:
+    ship():numberShip(0),gradus(0),minuts(0),hay(0){}
+    void dataShip();
+    void displaydataShip();
+};
+void ship::dataShip()
+{
+    counternumber++;
+    cout << "Введите координаты корабля : ";
+    cin >> gradus;
+    cin >> minuts;
+    cin >> hay;
+    cout << "Именной номер корабля : "; cin >> numberShip;
+    cout << endl;
+}
+void ship::displaydataShip()
+{
+    cout << "-------------------------------------------------------------------------------" << endl;
+    cout << "Корабль расположен по координатам : " << gradus << "\xF8" << minuts << "'" << hay << endl;
+    cout << "Именной номер корабля : " << numberShip<< endl;
+    cout << "Номер корабля : " << counternumber << endl;
+}
+int ship::counternumber;
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    ship One, Two, Three;
+    One.dataShip();
+    One.displaydataShip();
+    Two.dataShip();
+    Two.displaydataShip();
+    Three.dataShip();
+    Three.displaydataShip();
+
+    return 0;
+}
+
