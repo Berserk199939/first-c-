@@ -1,0 +1,36 @@
+#include <iostream>
+#include <STRING.H>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+void reservit(char []);
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    cout << "Введите строку: ";
+    char str[100];
+    cin >> str;
+    reservit(str);
+    cout << endl << str;
+    return 0;
+}
+void reservit(char a[])
+{
+    int temp =0 ;
+    char a2[100];
+    int j =  strlen(a);
+    for (int i = 0; i<strlen(a)/2;i++)
+    {
+        j--;
+        a2[temp] = a[i];
+        a[i]=a[j];
+        a[j]=a2[temp];
+
+        cout << a << " ";
+
+
+    }
+}
