@@ -1,0 +1,101 @@
+#include <iostream>
+#include <STRING.H>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+const int n=100;
+static float duim =0;
+static int x =0;
+class Distance
+{
+    int feet;
+    float inches;
+public:
+    void null(Distance ar[n])
+    {
+        for(int i =0;i<n;i++)
+            {
+                ar[i].feet=0;
+                ar[i].inches=0;
+            }
+    }
+    void getData()
+    {
+        cout << "Ввведите футы : "; cin >> feet;
+        cout << "Введите дюймы : "; cin >> inches;
+    }
+    void putData()
+    {
+        cout << "Среднее значение футов = " << x << " - " << "среднее значение дюймов( если таковые получились ) = " << duim << endl;
+    }
+    void sum(Distance d1[n])
+    {
+        float temp=0;
+        float y =0;
+        for(int i =0;i<n;i++)
+        {
+            if(i!=(n-1))
+            {
+                if(d1[i].feet != '/0')
+                {
+                    x=d1[i].feet+x;
+
+                }
+            }
+        }
+        for(int j = 0;j<n;j++)
+        {
+            if(j!=(n-1))
+            {
+                if(d1[j].inches != '/0')
+                    {
+                        y=d1[j].inches+y;
+                    }
+            }
+        }
+        if(y>12)
+        {
+            y=y/12;
+            temp=y;
+            y=static_cast<int>(y);
+            x+=y;
+            y=static_cast<float>(y);
+            y=(temp-y);
+            duim+=y;
+            if(duim>12)
+            {
+                duim=duim/12;
+                x=x+duim;
+                duim=duim/100;
+            }
+
+        }
+        cout << "Сложение футов "<< x << endl;
+        cout << "Сложение дюймов "<< duim << endl;
+    }
+};
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    char ch='0';
+    int i=0;
+    Distance ar[n];
+    Distance al;
+    al.null(ar);
+    while(ch!='n')
+    {
+        for (;i<n;i++)
+        {
+            ar[i].getData();
+            al.sum(ar);
+            break;
+        }
+        cout << "\nВведите символ --> n, если хотите завершить ввод элементов длины.\n";
+        ch=getch();
+    }
+    ar[i].putData();
+    return 0;
+}
