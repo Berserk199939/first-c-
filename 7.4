@@ -1,0 +1,38 @@
+#include <iostream>
+#include <STRING.H>
+#include <iomanip>
+#include <ctype.h>
+#include <process.h>
+#include <stdlib.h>
+#include <conio.h>
+using namespace std;
+const int n =10;
+int maxint(int ar[n]);
+int main ()
+{
+    setlocale(LC_ALL, "russian");
+    int ar[n];
+    int x =0;
+    for(int i =0;i<n;i++)
+    {
+        cout << "Введите число : ";cin >> x;
+        ar[i]=x;
+    }
+    cout << "\nНаибольший индекс наибольшего элемента = " << maxint(ar);;
+    return 0;
+}
+int maxint(int ar[n])
+{
+    int j=0;
+    int x=0;
+    for (int i=0;i<n;i++)
+    {
+        if(x<ar[i])
+            {
+                x=ar[i];
+                j=i;
+            }
+    }
+    cout << "Наибольший элемент = " << x;
+    return j;
+}
